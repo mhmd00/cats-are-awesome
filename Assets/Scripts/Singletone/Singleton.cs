@@ -19,7 +19,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     DontDestroyOnLoad(singletonObject);
                 }
             }
-
+            else
+            {
+                DontDestroyOnLoad(_instance);
+            }
             return _instance;
         }
     }

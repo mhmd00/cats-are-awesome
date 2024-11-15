@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf57ef297679b04ba693bc053c5abdd, type: 3}
+  m_Name: EasyLevelData
+  m_EditorClassIdentifier: 
+  levelName: Cute Birds
+  backgroundMusicName: BirdBack
+  cardImages:
+  - {fileID: 21300000, guid: 98cd6f83e0b56d04780ec0cfdc10f5fb, type: 3}
+  - {fileID: 21300000, guid: 4612ecc606f85c44d8cba1004e82f8d3, type: 3}
+  - {fileID: 21300000, guid: 1adfd344142bd494a937a8e81c4fc814, type: 3}
+  - {fileID: 21300000, guid: 1dd9d6c9e5b9f0d4db37d9c4919f354e, type: 3}
+  - {fileID: 21300000, guid: 8be2f50f2ce00874e8082aacf9193e58, type: 3}
+  backgroundSprite: {fileID: 21300000, guid: e8f1aa947e08e46b6af676cca01295c4, type: 3}
+  showDuration: 8
+  rows: 3
+  columns: 3
+  levelModeImage: {fileID: 21300000, guid: 5acd7954f51b35b45b4dac63bb97b311, type: 3}
