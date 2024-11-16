@@ -21,7 +21,8 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
-        int difficulty = PlayerPrefs.GetInt("SelectedDifficulty", 0);
+        GameData gameData=SaveSystem.LoadGameData();
+        int difficulty = gameData.selectedDifficulty;
         GenerateGrid(difficulty);
     }
 

@@ -21,13 +21,12 @@ public class SoundManager : Singleton<SoundManager>
     private float musicVolume;
     private float soundEffectsVolume;
 
-    private const string MUSIC_VOLUME_KEY = "MusicVolume";
-    private const string SOUND_EFFECTS_VOLUME_KEY = "SoundEffectsVolume";
 
     private void Awake()
     {
-        musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY, 0.5f);
-        soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME_KEY, 0.5f);
+        GameData savedData = SaveSystem.LoadGameData();
+        musicVolume = savedData.musicVolume;
+        soundEffectsVolume = savedData.soundEffectsVolume;
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.loop = true;
@@ -87,8 +86,9 @@ public class SoundManager : Singleton<SoundManager>
         musicVolume = Mathf.Clamp01(volume);
         musicSource.volume = musicVolume;
 
-        PlayerPrefs.SetFloat(MUSIC_VOLUME_KEY, musicVolume);
-        PlayerPrefs.Save();
+        GameData data = SaveSystem.LoadGameData();
+        data.musicVolume = musicVolume;
+        SaveSystem.SaveGameData(data);
     }
 
     /// <summary>
@@ -100,8 +100,9 @@ public class SoundManager : Singleton<SoundManager>
         soundEffectsVolume = Mathf.Clamp01(volume);
         soundEffectsSource.volume = soundEffectsVolume;
 
-        PlayerPrefs.SetFloat(SOUND_EFFECTS_VOLUME_KEY, soundEffectsVolume);
-        PlayerPrefs.Save();
+        GameData data = SaveSystem.LoadGameData();
+        data.soundEffectsVolume = soundEffectsVolume;
+        SaveSystem.SaveGameData(data);
     }
 
     /// <summary>

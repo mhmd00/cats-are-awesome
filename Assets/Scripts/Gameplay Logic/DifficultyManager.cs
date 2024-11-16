@@ -12,8 +12,8 @@ public class DifficultyManager : MonoBehaviour
 
     void Start()
     {
-        int savedDifficulty = PlayerPrefs.GetInt(DifficultyKey, 0); // 0 = Easy, 1 = Medium, 2 = Hard
-        SetDifficulty(savedDifficulty);
+        GameData savedData = SaveSystem.LoadGameData();
+        SetDifficulty(savedData.selectedDifficulty);
 
         toggleEasy.onValueChanged.AddListener((value) => OnDifficultyChanged(0, value));
         toggleMedium.onValueChanged.AddListener((value) => OnDifficultyChanged(1, value));
@@ -25,7 +25,9 @@ public class DifficultyManager : MonoBehaviour
         settingsMenu.PlayButtonClickSound();
         if (isOn)
         {
-            PlayerPrefs.SetInt(DifficultyKey, difficulty);
+            GameData data = SaveSystem.LoadGameData();
+            data.selectedDifficulty = difficulty;
+            SaveSystem.SaveGameData(data);
         }
     }
 

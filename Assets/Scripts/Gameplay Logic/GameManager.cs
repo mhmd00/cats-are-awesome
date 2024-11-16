@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        int difficulty = PlayerPrefs.GetInt("SelectedDifficulty", 0); // Default: Easy
-        gridManager.GenerateGrid(difficulty);
+        GameData savedData = SaveSystem.LoadGameData();
+        gridManager.GenerateGrid(savedData.selectedDifficulty);
     }
 }
