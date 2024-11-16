@@ -1,9 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GridManager gridManager;
+    [SerializeField] private GridManager gridManager;
+    [SerializeField] private LevleUIManager levelUIManager;
+
+    [SerializeField] private TMP_Text matchesText;
+    [SerializeField] private TMP_Text turnsText;
 
     void Start()
     {

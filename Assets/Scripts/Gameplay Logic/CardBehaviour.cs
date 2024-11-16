@@ -8,6 +8,8 @@ public class CardBehaviour : MonoBehaviour
 
     private bool isFlipped = false;
 
+    public bool IsFlipped => isFlipped;
+
     public void FlipCard(System.Action onFlipComplete = null)
     {
         if (isFlipped) return;
@@ -36,5 +38,17 @@ public class CardBehaviour : MonoBehaviour
             })
             .Append(transform.DOScaleX(1, 0.15f))
             .OnComplete(() => onResetComplete?.Invoke());
+    }
+
+    public void HideCard()
+    {
+        isFlipped = false;
+        Sequence hideSequence = DOTween.Sequence();
+        hideSequence.Append(transform.DOScale(0, 0.25f).SetEase(Ease.OutQuad))
+                    .OnComplete(() =>
+                    {
+                        frontImage.SetActive(false);
+                        backImage.SetActive(false);
+                    });
     }
 }

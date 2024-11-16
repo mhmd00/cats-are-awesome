@@ -26,8 +26,8 @@ public class SoundManager : Singleton<SoundManager>
 
     private void Awake()
     {
-        musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY, 1.0f);
-        soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME_KEY, 1.0f);
+        musicVolume = PlayerPrefs.GetFloat(MUSIC_VOLUME_KEY, 0.5f);
+        soundEffectsVolume = PlayerPrefs.GetFloat(SOUND_EFFECTS_VOLUME_KEY, 0.5f);
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.loop = true;
