@@ -6,6 +6,7 @@ using System.Collections;
 public class LevleUIManager : MonoBehaviour
 {
     [SerializeField] private CardManager cardManager;
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] Image levelModeImageUI;
     [SerializeField] Image levelBackground;
@@ -14,9 +15,11 @@ public class LevleUIManager : MonoBehaviour
     [SerializeField] private TMP_Text countdownText;
     [SerializeField] private TMP_Text matchesText;
     [SerializeField] private TMP_Text turnsText;
+    [SerializeField] private TMP_Text trialsText;
 
     private int totalMatches = 0;
     private int totalTurns = 0;
+    private int totalTrials = 3;
 
     private bool isCountdownActive = false;
 
@@ -60,13 +63,18 @@ public class LevleUIManager : MonoBehaviour
     public void UpdateMatches()
     {
         totalMatches++;
-        matchesText.text =totalMatches.ToString();
+        matchesText.text = totalMatches.ToString();
     }
 
     public void UpdateTurns()
     {
         totalTurns++;
-        turnsText.text =totalTurns.ToString();
+        turnsText.text = totalTurns.ToString();
+    }
+
+    private void UpdateTrialsUI()
+    {
+        trialsText.text = totalTrials.ToString();
     }
 
     public void StartCountdown(GameObject[] cards, float duration)
@@ -117,8 +125,6 @@ public class LevleUIManager : MonoBehaviour
         cardManager.UnlockCardInteraction();
     }
 
-
-
     private void UpdateCountdownUI(float timeLeft)
     {
         countdownText.gameObject.SetActive(true);
@@ -128,5 +134,16 @@ public class LevleUIManager : MonoBehaviour
     private void HideCountdownUI()
     {
         countdownText.gameObject.SetActive(false);
+    }
+
+    public void ResetLevel()
+    {
+        totalMatches = 0;
+        totalTurns = 0;
+        totalTrials = gameManager.totalTrials;
+
+        UpdateTurns();
+        UpdateMatches();
+        UpdateTrialsUI();
     }
 }

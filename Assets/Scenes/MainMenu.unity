@@ -262,6 +262,9 @@ MonoBehaviour:
   - name: FoodBackground
     clip: {fileID: 8300000, guid: 08d8e568578d4b641bf815a36c33998e, type: 3}
     pitch: 1
+  - name: GameOver
+    clip: {fileID: 8300000, guid: bd5bbf1bbb436b747949560135652d2a, type: 3}
+    pitch: 1
   soundEffects:
   - name: Click
     clip: {fileID: 8300000, guid: f9d4f85b634b21341a14777f11c9c5f3, type: 3}

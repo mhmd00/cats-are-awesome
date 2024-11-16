@@ -3,11 +3,13 @@ using UnityEngine.UI;
 using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
+using DG.Tweening.Core.Easing;
 
 public class CardManager : MonoBehaviour
 {
     [SerializeField] LevelManager levelManager;
     [SerializeField] LevleUIManager levelUIManager;
+    [SerializeField] GameManager gameManager;
 
     private List<CardBehaviour> flippedCards = new List<CardBehaviour>();
     private bool isCardInteractionLocked = false;
@@ -119,6 +121,7 @@ public class CardManager : MonoBehaviour
         else
         {
             SoundManager.Instance.PlaySound("WrongMatch");
+            gameManager.CheckTrialStatus(false);
             ResetCards(card1, card2);
         }
 

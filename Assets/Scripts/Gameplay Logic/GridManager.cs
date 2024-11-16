@@ -37,6 +37,11 @@ public class GridManager : MonoBehaviour
         levleUIManager.SetLevelBackground(levelData);
         levleUIManager.DisplayLevelModeImage(levelData);
     }
+
+    public void ResetGrid(int difficult)
+    {
+        GenerateGrid(difficult);
+    }
     private void ClearGrid()
     {
         foreach (Transform child in gridParent)
