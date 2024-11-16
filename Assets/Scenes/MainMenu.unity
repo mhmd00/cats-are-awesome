@@ -265,6 +265,9 @@ MonoBehaviour:
   - name: GameOver
     clip: {fileID: 8300000, guid: bd5bbf1bbb436b747949560135652d2a, type: 3}
     pitch: 1
+  - name: Victory
+    clip: {fileID: 8300000, guid: 426396492f2d3564ca7dc55eec396642, type: 3}
+    pitch: 1
   soundEffects:
   - name: Click
     clip: {fileID: 8300000, guid: f9d4f85b634b21341a14777f11c9c5f3, type: 3}

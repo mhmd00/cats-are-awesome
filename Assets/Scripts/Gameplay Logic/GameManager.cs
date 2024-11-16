@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text turnsText;
     [SerializeField] private TMP_Text trialsText;
     [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private GameObject victoryMenu;
     [SerializeField] private Button restartButton;
 
     public int totalTrials = 3;
@@ -37,7 +38,13 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
+    public void CheckUserVictory()
+    {
+        if (levelUIManager.GetTotalMatches() == gridManager.GetTotalCardPairs())
+        {
+            ActivateVictoryMenu();
+        }
+    }
     private void UpdateTrialsUI()
     {
         trialsText.text = totalTrials.ToString();
@@ -49,14 +56,22 @@ public class GameManager : MonoBehaviour
         UIAnimator.ShowUI(gameOverMenu);
     }
 
+    private void ActivateVictoryMenu()
+    {
+        SoundManager.Instance.PlayMusic("Victory");
+        UIAnimator.ShowUI(victoryMenu);
+    }
+
     public void RestartGame()
     {
         totalTrials = 3;
         UpdateTrialsUI();
         UIAnimator.HideUI(gameOverMenu);
+        UIAnimator.HideUI(victoryMenu);
 
         GameData savedData = SaveSystem.LoadGameData();
         gridManager.ResetGrid(savedData.selectedDifficulty);
         levelUIManager.ResetLevel();
+        Time.timeScale = 1;
     }
 }

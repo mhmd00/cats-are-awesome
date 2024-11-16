@@ -81,5 +81,8 @@ public class GridManager : MonoBehaviour
         cardManager.AdjustCardSize(rows, columns, gridLayout, gridParent);
         levleUIManager.StartCountdown(cards, levelData.showDuration);
     }
-
+    public int GetTotalCardPairs()
+    {
+        return (rows * columns) / 2;
+    }
 }

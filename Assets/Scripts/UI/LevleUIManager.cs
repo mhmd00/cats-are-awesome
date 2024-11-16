@@ -76,6 +76,10 @@ public class LevleUIManager : MonoBehaviour
     {
         trialsText.text = totalTrials.ToString();
     }
+    public int GetTotalMatches()
+    {
+        return totalMatches;
+    }
 
     public void StartCountdown(GameObject[] cards, float duration)
     {

@@ -117,6 +117,7 @@ public class CardManager : MonoBehaviour
             levelUIManager.UpdateMatches();
             SoundManager.Instance.PlaySound("RightMatch");
             HideMatchedCards(card1, card2);
+            gameManager.CheckUserVictory();
         }
         else
         {
