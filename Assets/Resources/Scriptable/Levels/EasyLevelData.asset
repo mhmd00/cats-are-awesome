@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EasyLevelData
   m_EditorClassIdentifier: 
   levelName: Cute Birds
-  backgroundMusicName: BirdBack
+  backgroundMusicType: 1
   cardImages:
   - {fileID: 21300000, guid: 98cd6f83e0b56d04780ec0cfdc10f5fb, type: 3}
   - {fileID: 21300000, guid: 4612ecc606f85c44d8cba1004e82f8d3, type: 3}

@@ -250,32 +250,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicTracks:
-  - name: AnimalBack
+  - soundType: 0
     clip: {fileID: 8300000, guid: 66c4bcf2d3352b643bc5959c93ca25fb, type: 3}
     pitch: 1
-  - name: BirdBack
+  - soundType: 1
     clip: {fileID: 8300000, guid: 2b12c1c33cc6c04499eea01324c991be, type: 3}
     pitch: 1
-  - name: IntroBackground
+  - soundType: 2
     clip: {fileID: 8300000, guid: a78926e1a206d72428af894e937925a4, type: 3}
     pitch: 1
-  - name: FoodBackground
+  - soundType: 3
     clip: {fileID: 8300000, guid: 08d8e568578d4b641bf815a36c33998e, type: 3}
     pitch: 1
-  - name: GameOver
+  - soundType: 4
     clip: {fileID: 8300000, guid: bd5bbf1bbb436b747949560135652d2a, type: 3}
     pitch: 1
-  - name: Victory
+  - soundType: 5
     clip: {fileID: 8300000, guid: 426396492f2d3564ca7dc55eec396642, type: 3}
     pitch: 1
   soundEffects:
-  - name: Click
+  - soundType: 0
     clip: {fileID: 8300000, guid: f9d4f85b634b21341a14777f11c9c5f3, type: 3}
     pitch: 1
-  - name: RightMatch
+  - soundType: 1
     clip: {fileID: 8300000, guid: cf76d00de9e71b442a76de7b15415cc4, type: 3}
     pitch: 1
-  - name: WrongMatch
+  - soundType: 2
     clip: {fileID: 8300000, guid: 094856d3b2deb954395aaa233c25932c, type: 3}
     pitch: 1
 --- !u!1 &360928699
