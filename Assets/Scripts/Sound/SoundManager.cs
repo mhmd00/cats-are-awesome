@@ -1,11 +1,37 @@
+using System;
 using UnityEngine;
+
+public enum MusicType
+{
+    AnimalBack,
+    BirdBack,
+    IntroBackground,
+    FoodBackground,
+    GameOver,
+    Victory
+}
+
+public enum SoundEffectType
+{
+    Click,
+    RightMatch,
+    WrongMatch
+}
 
 public class SoundManager : Singleton<SoundManager>
 {
     [System.Serializable]
-    public struct Sound
+    public struct MusicSound
     {
-        public string name;
+        public MusicType soundType; // Use MusicType enum here
+        public AudioClip clip;
+        public float pitch;
+    }
+
+    [System.Serializable]
+    public struct SoundEffectSound
+    {
+        public SoundEffectType soundType;
         public AudioClip clip;
         public float pitch;
     }
@@ -13,14 +39,13 @@ public class SoundManager : Singleton<SoundManager>
     private AudioSource musicSource;
     private AudioSource soundEffectsSource;
 
-    public Sound[] musicTracks;
-    public Sound[] soundEffects;
+    public MusicSound[] musicTracks;
+    public SoundEffectSound[] soundEffects;
 
     private const float DEFAULT_PITCH = 1.0f;
 
     private float musicVolume;
     private float soundEffectsVolume;
-
 
     private void Awake()
     {
@@ -43,14 +68,14 @@ public class SoundManager : Singleton<SoundManager>
     /// <summary>
     /// Plays the specified music track.
     /// </summary>
-    /// <param name="soundName">The name of the music track to play.</param>
-    public void PlayMusic(string soundName)
+    /// <param name="musicType">The type of the music to play.</param>
+    public void PlayMusic(MusicType musicType)
     {
         musicSource.Stop();
 
         foreach (var track in musicTracks)
         {
-            if (track.name == soundName)
+            if (track.soundType == musicType) // Compare against MusicType
             {
                 musicSource.clip = track.clip;
                 musicSource.volume = musicVolume;
@@ -64,12 +89,12 @@ public class SoundManager : Singleton<SoundManager>
     /// <summary>
     /// Plays the specified sound effect.
     /// </summary>
-    /// <param name="soundName">The name of the sound effect to play.</param>
-    public void PlaySound(string soundName)
+    /// <param name="soundEffectType">The type of the sound effect to play.</param>
+    public void PlaySound(SoundEffectType soundEffectType)
     {
         foreach (var sound in soundEffects)
         {
-            if (sound.name == soundName)
+            if (sound.soundType == soundEffectType) // Compare against SoundEffectType
             {
                 soundEffectsSource.PlayOneShot(sound.clip, soundEffectsVolume);
                 break;

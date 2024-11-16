@@ -5,7 +5,7 @@ public class LevelData : ScriptableObject
 {
     [Header("Level Info")]
     public string levelName;
-    public string backgroundMusicName;
+    public MusicType backgroundMusicType;
 
     [Header("Card Settings")]
     public Sprite[] cardImages;

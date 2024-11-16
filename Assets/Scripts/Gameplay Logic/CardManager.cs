@@ -115,13 +115,13 @@ public class CardManager : MonoBehaviour
         if (card1.frontImage.GetComponent<Image>().sprite == card2.frontImage.GetComponent<Image>().sprite)
         {
             levelUIManager.UpdateMatches();
-            SoundManager.Instance.PlaySound("RightMatch");
+            SoundManager.Instance.PlaySound(SoundEffectType.RightMatch);
             HideMatchedCards(card1, card2);
             gameManager.CheckUserVictory();
         }
         else
         {
-            SoundManager.Instance.PlaySound("WrongMatch");
+            SoundManager.Instance.PlaySound(SoundEffectType.WrongMatch);
             gameManager.CheckTrialStatus(false);
             ResetCards(card1, card2);
         }

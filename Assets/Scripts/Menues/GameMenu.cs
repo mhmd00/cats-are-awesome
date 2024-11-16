@@ -19,6 +19,6 @@ public class GameMenu : MonoBehaviour
 
     public void PlayButtonClickSound()
     {
-        SoundManager.Instance.PlaySound("Click");
+        SoundManager.Instance.PlaySound(SoundEffectType.Click);
     }
 }

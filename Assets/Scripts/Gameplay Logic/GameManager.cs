@@ -52,13 +52,13 @@ public class GameManager : MonoBehaviour
 
     private void ActivateGameOverMenu()
     {
-        SoundManager.Instance.PlayMusic("GameOver");
+        SoundManager.Instance.PlayMusic(MusicType.GameOver);
         UIAnimator.ShowUI(gameOverMenu);
     }
 
     private void ActivateVictoryMenu()
     {
-        SoundManager.Instance.PlayMusic("Victory");
+        SoundManager.Instance.PlayMusic(MusicType.Victory);
         UIAnimator.ShowUI(victoryMenu);
     }
 

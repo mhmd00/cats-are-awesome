@@ -30,7 +30,7 @@ public class SettingsMenu : MonoBehaviour
         }
         canvasGroup.alpha = 0;
 
-        SoundManager.Instance.PlayMusic("IntroBackground");
+        SoundManager.Instance.PlayMusic(MusicType.IntroBackground);
 
         musicVolumeSlider.value = SoundManager.Instance.GetMusicVolume();
         soundEffectsVolumeSlider.value = SoundManager.Instance.GetSoundEffectsVolume();
@@ -46,7 +46,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void PlayButtonClickSound()
     {
-        SoundManager.Instance.PlaySound("Click");
+        SoundManager.Instance.PlaySound(SoundEffectType.Click);
     }
     /// <summary>
     /// Updates the music volume based on the slider value.

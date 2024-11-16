@@ -45,9 +45,6 @@ public class LevelManager : MonoBehaviour
     }
     public void SetBackgroundMusic(LevelData levelData)
     {
-        if (levelData.backgroundMusicName != null)
-        {
-            SoundManager.Instance.PlayMusic(levelData.backgroundMusicName);
-        }
+            SoundManager.Instance.PlayMusic(levelData.backgroundMusicType);
     }
 }

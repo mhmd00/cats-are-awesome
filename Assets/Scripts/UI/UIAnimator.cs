@@ -35,7 +35,6 @@ public static class UIAnimator
     public static void HideUI(GameObject uiObject, float duration = 0.5f)
     {
         if (uiObject == null) return;
-        Debug.Log("<color=cyan>Starting HideUI Animation</color>");
         CanvasGroup canvasGroup = uiObject.GetComponent<CanvasGroup>() ?? uiObject.AddComponent<CanvasGroup>();
 
         uiObject.transform.DOScale(Vector3.zero, duration).SetEase(Ease.InBack);
